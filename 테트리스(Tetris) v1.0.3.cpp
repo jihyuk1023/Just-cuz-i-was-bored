@@ -5,16 +5,16 @@
 #include <ctime>
 #include <cmath>
 #include <string>
-// ¡à¡á¢Ì
+// â–¡â– â–©
 #define SPACE 0 // "  "
-#define WHITE 1 // ¡à
-#define BLACK 2 // ¡á
-#define GRAY  3 // ¢Ì
+#define WHITE 1 // â–¡
+#define BLACK 2 // â– 
+#define GRAY  3 // â–©
 #define xFrame 12
 #define yFrame 20
 using namespace std;
 
-typedef enum { NOCURSOR, SOLIDCURSOR, NORMALCURSOR } CURSOR_TYPE; //Ä¿¼­¼û±â±â ÇÔ¼ö
+typedef enum { NOCURSOR, SOLIDCURSOR, NORMALCURSOR } CURSOR_TYPE; //ì»¤ì„œìˆ¨ê¸°ê¸° í•¨ìˆ˜
 typedef struct POSITION{int y; int x;} POS; 
 typedef struct strc_block{
 	char name;
@@ -128,13 +128,13 @@ int title(int& hit){
 			for(int cnt; !(hit = kbhit()); cnt++ ){
 				if(cnt%20 == 0) setcolor(rand()%15 + 1, 0);
 				
-				if(cnt%20 < 10) printf("¡Ù ¡Ú ¡Ù ¡Ú ¡Ù ¡Ú ¡Ù\n");
+				if(cnt%20 < 10) printf("â˜† â˜… â˜† â˜… â˜† â˜… â˜†\n");
 				else 			printf("                     \n");
 				
 				printf("    T E T R I S\n");
 				printf("\npress any key to play!!\n");
 				
-				if(cnt%20 < 10) printf("¡Ù ¡Ú ¡Ù ¡Ú ¡Ù ¡Ú ¡Ù\n");
+				if(cnt%20 < 10) printf("â˜† â˜… â˜† â˜… â˜† â˜… â˜†\n");
 				else			 printf("                     \n");
 				
 				printf("\n-------------------------------------------------------------------");
@@ -400,15 +400,15 @@ void draw(int (*display)[xFrame]){
 			if(display[Y][X] == SPACE)
 				printf("  ");
 			else if(display[Y][X] == WHITE)
-				printf("¡à");
+				printf("â–¡");
             else if(display[Y][X] == BLACK)
-                printf("¡á");
+                printf("â– ");
             else if(display[Y][X] == GRAY)
-                printf("¢Ì");
+                printf("â–©");
 		printf("\n");
 	}
 	
-	printf("\n ¡Ú¡Ù  SCORE : %d  ¡Ù¡Ú\n", score);
+	printf("\n â˜…â˜†  SCORE : %d  â˜†â˜…\n", score);
 	printf("\n-------------------------------------------------------------------");
 	printf("\n Q : Rotation    W: Shift    E : Rotation");
 	printf("\n A : Left        S : Drop    D : Right        SPACEBAR : Hard Drop");
@@ -505,10 +505,10 @@ block get_block(char Char){
 	I.xLength = 1;
 	I.yLength = 4;
 	INIT_SQUARE(I);
-	I.square[0][1] = WHITE;	//	¡à
-	I.square[1][1] = WHITE;	//	¡à
-	I.square[2][1] = WHITE;	//	¡à
-	I.square[3][1] = WHITE;	//	¡à
+	I.square[0][1] = WHITE;	//	â–¡
+	I.square[1][1] = WHITE;	//	â–¡
+	I.square[2][1] = WHITE;	//	â–¡
+	I.square[3][1] = WHITE;	//	â–¡
 
 	block J;
 	J.name = 'J';
@@ -518,9 +518,9 @@ block get_block(char Char){
 	J.xLength = 2;
 	J.yLength = 3;
 	INIT_SQUARE(J);
-	J.square[0][1] = WHITE;	//	  ¡à
-	J.square[1][1] = WHITE;	//	  ¡à
-	J.square[2][1] = WHITE;	//	¡à¡à
+	J.square[0][1] = WHITE;	//	  â–¡
+	J.square[1][1] = WHITE;	//	  â–¡
+	J.square[2][1] = WHITE;	//	â–¡â–¡
 	J.square[2][0] = WHITE;
 	
 	block L;
@@ -531,9 +531,9 @@ block get_block(char Char){
 	L.xLength = 2;
 	L.yLength = 3;
 	INIT_SQUARE(L);
-	L.square[0][0] = WHITE;	//	¡à¡à
-	L.square[0][1] = WHITE;	//	  ¡à
-	L.square[1][1] = WHITE;	//    ¡à
+	L.square[0][0] = WHITE;	//	â–¡â–¡
+	L.square[0][1] = WHITE;	//	  â–¡
+	L.square[1][1] = WHITE;	//    â–¡
 	L.square[2][1] = WHITE;
 	
 	block O;
@@ -544,8 +544,8 @@ block get_block(char Char){
 	O.xLength = 2;
 	O.yLength = 2;
 	INIT_SQUARE(O);
-	O.square[0][0] = WHITE;	//	¡à ¡à
-	O.square[0][1] = WHITE;	//	¡à ¡à
+	O.square[0][0] = WHITE;	//	â–¡ â–¡
+	O.square[0][1] = WHITE;	//	â–¡ â–¡
 	O.square[1][0] = WHITE;
 	O.square[1][1] = WHITE;
 	
@@ -557,9 +557,9 @@ block get_block(char Char){
 	S.xLength = 2;
 	S.yLength = 3;
 	INIT_SQUARE(S);
-	S.square[0][0] = WHITE;	//	¡à 
-	S.square[1][0] = WHITE;	//	¡à ¡à  
-	S.square[1][1] = WHITE;	//     ¡à
+	S.square[0][0] = WHITE;	//	â–¡ 
+	S.square[1][0] = WHITE;	//	â–¡ â–¡  
+	S.square[1][1] = WHITE;	//     â–¡
 	S.square[2][1] = WHITE;
 	
 	block T;
@@ -570,9 +570,9 @@ block get_block(char Char){
 	T.xLength = 2;
 	T.yLength = 3;
 	INIT_SQUARE(T);
-	T.square[0][1] = WHITE;	//    ¡à
-	T.square[1][0] = WHITE;	//	¡à¡à
-	T.square[1][1] = WHITE;  //	  ¡à
+	T.square[0][1] = WHITE;	//    â–¡
+	T.square[1][0] = WHITE;	//	â–¡â–¡
+	T.square[1][1] = WHITE;  //	  â–¡
 	T.square[2][1] = WHITE;
 
 	block Z;
@@ -583,9 +583,9 @@ block get_block(char Char){
 	Z.xLength = 2;
 	Z.yLength = 3; 
 	INIT_SQUARE(Z);
-	Z.square[0][1] = WHITE;	//		¡à
-	Z.square[1][0] = WHITE;	//	 ¡à ¡à
-	Z.square[1][1] = WHITE;	//   ¡à
+	Z.square[0][1] = WHITE;	//		â–¡
+	Z.square[1][0] = WHITE;	//	 â–¡ â–¡
+	Z.square[1][1] = WHITE;	//   â–¡
 	Z.square[2][0] = WHITE;
 	
 	block frame_left;
@@ -594,10 +594,10 @@ block get_block(char Char){
 	frame_left.xLength = 1;
 	frame_left.yLength = 4;
 	INIT_SQUARE(frame_left);
-	frame_left.square[0][0] = GRAY;	//	¡á
-	frame_left.square[1][0] = GRAY;	//	¡á
-	frame_left.square[2][0] = GRAY;	//	¡á
-	frame_left.square[3][0] = GRAY;	//	¡á
+	frame_left.square[0][0] = GRAY;	//	â– 
+	frame_left.square[1][0] = GRAY;	//	â– 
+	frame_left.square[2][0] = GRAY;	//	â– 
+	frame_left.square[3][0] = GRAY;	//	â– 
 	
 	block frame_right;
 	frame_right.position.x = xFrame - 4;
@@ -605,10 +605,10 @@ block get_block(char Char){
 	frame_right.xLength = 1;
 	frame_right.yLength = 4;
 	INIT_SQUARE(frame_right);
-	frame_right.square[0][3] = GRAY;	//	¡á
-	frame_right.square[1][3] = GRAY;	//	¡á
-	frame_right.square[2][3] = GRAY;	//	¡á
-	frame_right.square[3][3] = GRAY;	//	¡á
+	frame_right.square[0][3] = GRAY;	//	â– 
+	frame_right.square[1][3] = GRAY;	//	â– 
+	frame_right.square[2][3] = GRAY;	//	â– 
+	frame_right.square[3][3] = GRAY;	//	â– 
 
 	block frame_bottom;
 	frame_bottom.position.x = 0;
@@ -616,10 +616,10 @@ block get_block(char Char){
 	frame_bottom.xLength = 1;
 	frame_bottom.yLength = 4;
 	INIT_SQUARE(frame_bottom);
-	frame_bottom.square[3][0] = GRAY;	//	¡á
-	frame_bottom.square[3][1] = GRAY;	//	¡á
-	frame_bottom.square[3][2] = GRAY;	//	¡á
-	frame_bottom.square[3][3] = GRAY;	//	¡á	
+	frame_bottom.square[3][0] = GRAY;	//	â– 
+	frame_bottom.square[3][1] = GRAY;	//	â– 
+	frame_bottom.square[3][2] = GRAY;	//	â– 
+	frame_bottom.square[3][3] = GRAY;	//	â– 	
 		
 	switch(Char){
 		case 'I' : return I; break;
